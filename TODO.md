@@ -22,3 +22,4 @@
 - [x] Add scroll-triggered word-by-word typography reveals with blur-clear and lift motion, subtle headline drift tied to scroll position, hero-slide replays, and reduced-motion/accessibility fallbacks.
 - [x] Remove the Journal card block, heading, imagery, and homepage anchors completely from the primary Wilton homepage flow, replacing visible navigation references with Specials.
 - [x] Replace the repeated background-image treatment with five section layout grammars: mosaic, split image, paper/editorial, poster, and gallery strip, while preserving shared Wilton typography, color, and motion language.
+- [x] Move the desktop hero headline, intro, and actions into a tighter right-side editorial column while preserving mobile stacking and readability.
