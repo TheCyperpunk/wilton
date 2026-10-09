@@ -19,6 +19,16 @@ const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+const scrollTasks = [];
+let scrollFrame = 0;
+const registerScrollTask = (task) => scrollTasks.push(task);
+window.addEventListener('scroll', () => {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(() => {
+    scrollFrame = 0;
+    scrollTasks.forEach((task) => task());
+  });
+}, { passive: true });
 
 const setMenuState = (open) => {
   header?.classList.toggle('menu-open', open);
@@ -223,12 +233,12 @@ function setupFontMotion() {
   const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.target.classList.toggle('font-in-view', entry.isIntersecting)), { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
   targets.forEach((target) => observer.observe(target));
   const headlines = document.querySelectorAll('.font-motion');
-  if (!reducedMotion) window.addEventListener('scroll', () => headlines.forEach((headline) => {
+  if (!reducedMotion) registerScrollTask(() => headlines.forEach((headline) => {
     const rect = headline.getBoundingClientRect();
     const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
     headline.style.setProperty('--headline-y', `${Math.max(-8, Math.min(8, (progress - .5) * -14))}px`);
     headline.style.setProperty('--headline-x', `${Math.max(-12, Math.min(12, (progress - .5) * 20))}px`);
-  }), { passive: true });
+  }));
 }
 
 function setupScroll() {
@@ -243,12 +253,13 @@ function setupScroll() {
     });
   }, { threshold: 0.3 });
   sections.forEach((section) => sectionObserver.observe(section));
-  if (!reducedMotion) window.addEventListener('scroll', () => document.querySelectorAll('[data-parallax]').forEach((el) => {
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
+  if (!reducedMotion) registerScrollTask(() => parallaxElements.forEach((el) => {
     const rect = el.parentElement.getBoundingClientRect();
     const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
     const amount = Math.max(-18, Math.min(18, (progress - .5) * -28));
     el.style.transform = `scale(1.04) translate3d(0, ${amount}px, 0)`;
-  }), { passive: true });
+  }));
   const hero = document.querySelector('.hero');
   if (hero) new IntersectionObserver(([entry]) => header?.classList.toggle('scrolled', !entry.isIntersecting), { threshold: 0.02 }).observe(hero);
 }
@@ -264,6 +275,13 @@ function setupForms() {
   }));
 }
 
+function setupMediaHints() {
+  document.querySelectorAll('img').forEach((image) => {
+    image.decoding = 'async';
+    if (!image.loading && !image.closest('.hero')) image.loading = 'lazy';
+  });
+}
+
 function decorateImageSections() {
   const sectionImages = [ASSETS.story, ASSETS.special, ASSETS.interior, ASSETS.vegetarian, ASSETS.breakfast];
   const variants = ['mosaic', 'split', 'paper', 'poster', 'gallery'];
@@ -273,24 +291,24 @@ function decorateImageSections() {
     section.classList.add(`image-variant-${variants[index % variants.length]}`);
     section.dataset.imageSection = 'true';
     section.style.setProperty('--section-image', `url('${sectionImages[index % sectionImages.length]}')`);
-    if (!section.querySelector('.fixed-media-grid')) section.insertAdjacentHTML('afterbegin', `<div class="fixed-media-grid" aria-hidden="true"><img src="${sectionImages[index % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 1) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 2) % sectionImages.length]}" alt="" /></div>`);
+    if (!section.querySelector('.fixed-media-grid')) section.insertAdjacentHTML('afterbegin', `<div class="fixed-media-grid" aria-hidden="true"><img src="${sectionImages[index % sectionImages.length]}" alt="" loading="lazy" decoding="async" /><img src="${sectionImages[(index + 1) % sectionImages.length]}" alt="" loading="lazy" decoding="async" /><img src="${sectionImages[(index + 2) % sectionImages.length]}" alt="" loading="lazy" decoding="async" /></div>`);
   });
   document.querySelectorAll('.section-dark:not(.hero):not(.inner-banner):not(.site-footer), .section-burgundy').forEach((section, index) => {
     section.classList.add('image-dark-section');
     section.classList.add(`image-variant-${variants[(index + 2) % variants.length]}`);
     section.dataset.imageSection = 'true';
     section.style.setProperty('--section-image', `url('${sectionImages[(index + 2) % sectionImages.length]}')`);
-    if (!section.querySelector('.fixed-media-grid')) section.insertAdjacentHTML('afterbegin', `<div class="fixed-media-grid" aria-hidden="true"><img src="${sectionImages[(index + 2) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 3) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 4) % sectionImages.length]}" alt="" /></div>`);
+    if (!section.querySelector('.fixed-media-grid')) section.insertAdjacentHTML('afterbegin', `<div class="fixed-media-grid" aria-hidden="true"><img src="${sectionImages[(index + 2) % sectionImages.length]}" alt="" loading="lazy" decoding="async" /><img src="${sectionImages[(index + 3) % sectionImages.length]}" alt="" loading="lazy" decoding="async" /><img src="${sectionImages[(index + 4) % sectionImages.length]}" alt="" loading="lazy" decoding="async" /></div>`);
   });
   const imageSections = document.querySelectorAll('[data-image-section]');
   if (!imageSections.length) return;
   const sectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => entry.target.classList.toggle('section-in-view', entry.isIntersecting)), { threshold: 0.18 });
   imageSections.forEach((section) => sectionObserver.observe(section));
-  if (!reducedMotion) window.addEventListener('scroll', () => imageSections.forEach((section) => {
+  if (!reducedMotion) registerScrollTask(() => imageSections.forEach((section) => {
     const rect = section.getBoundingClientRect();
     const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
     section.style.setProperty('--section-shift', `${Math.round((progress - .5) * -7)}%`);
-  }), { passive: true });
+  }));
 }
 
 function setupMotionLayer() {
@@ -335,6 +353,7 @@ function setupMotionLayer() {
 
 const routeRendered = renderRoute();
 setupHomeCarousel();
+setupMediaHints();
 decorateImageSections();
 setupFontMotion();
 observeReveals();

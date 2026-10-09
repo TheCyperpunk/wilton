@@ -28,3 +28,4 @@
 - [x] Convert the kitchen-story block into a full-size editorial image spread with a tall edge-to-edge image column, spacious quote panel, stable framing rules, and responsive mobile stacking.
 - [x] Remove the unwanted “Discover our menu / Browse all categories” header strip from the homepage while preserving the category image-card grid below it.
 - [x] Remove the homepage “Make an evening of it” reservation callout, description, and phone CTA while keeping the dedicated `/reserve` route available.
+- [x] Optimize the entire website for phone use with one requestAnimationFrame scroll scheduler, cached parallax targets, async/lazy image loading, hero preload, gzip responses, cache headers, overflow guards, touch-safe controls, and responsive checks across home, menu, contact, reserve, and location routes.
