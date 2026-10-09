@@ -26,3 +26,4 @@
 - [x] Correct the desktop hero alignment so the headline, intro, and actions sit in the left-side negative space closer to the edge, with unchanged mobile stacking.
 - [x] Adapt the supplied site’s typography motion language into Wilton with restrained serif/mono pairing, a continuous moving principle-word strip, horizontal scroll-linked headline drift, and preserved word-by-word reveals with reduced-motion support.
 - [x] Convert the kitchen-story block into a full-size editorial image spread with a tall edge-to-edge image column, spacious quote panel, stable framing rules, and responsive mobile stacking.
+- [x] Remove the unwanted “Discover our menu / Browse all categories” header strip from the homepage while preserving the category image-card grid below it.
