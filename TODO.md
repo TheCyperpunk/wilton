@@ -18,3 +18,4 @@
 - [x] Keep the visible motion sequence free of pending placeholders by using the completed Wilton image library while additional generated assets process independently.
 - [x] Convert cream and dark content bands into image-backed sections with alternating Wilton imagery, stronger overlays, tighter spacing, photographic texture, and scroll-driven background drift.
 - [x] Add denser scene separators, animated section rules, compact editorial blocks, and stronger mobile image transitions inspired by the supplied reference.
+- [x] Add fixed, edge-to-edge three-panel image mosaics to cream, burgundy, and dark content bands with stable object-fit cropping, section-specific image rotation, readable overlays, and responsive two-panel mobile stacking.

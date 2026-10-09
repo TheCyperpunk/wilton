@@ -225,11 +225,13 @@ function decorateImageSections() {
     section.classList.add('image-section');
     section.dataset.imageSection = 'true';
     section.style.setProperty('--section-image', `url('${sectionImages[index % sectionImages.length]}')`);
+    if (!section.querySelector('.fixed-media-grid')) section.insertAdjacentHTML('afterbegin', `<div class="fixed-media-grid" aria-hidden="true"><img src="${sectionImages[index % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 1) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 2) % sectionImages.length]}" alt="" /></div>`);
   });
   document.querySelectorAll('.section-dark:not(.hero):not(.inner-banner):not(.site-footer), .section-burgundy').forEach((section, index) => {
     section.classList.add('image-dark-section');
     section.dataset.imageSection = 'true';
     section.style.setProperty('--section-image', `url('${sectionImages[(index + 2) % sectionImages.length]}')`);
+    if (!section.querySelector('.fixed-media-grid')) section.insertAdjacentHTML('afterbegin', `<div class="fixed-media-grid" aria-hidden="true"><img src="${sectionImages[(index + 2) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 3) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 4) % sectionImages.length]}" alt="" /></div>`);
   });
   const imageSections = document.querySelectorAll('[data-image-section]');
   if (!imageSections.length) return;
