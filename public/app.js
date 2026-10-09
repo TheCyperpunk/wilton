@@ -7,7 +7,12 @@ const ASSETS = {
   fire: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-2.webp',
   vegetarian: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-3.webp',
   dessert: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-4.webp',
-  event: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-5.webp'
+  event: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-5.webp',
+  chef: '/manus-storage/async-images/X8I6wlGizQPqQutyAYUk07/image-1.webp',
+  cocktail: '/manus-storage/async-images/X8I6wlGizQPqQutyAYUk07/image-2.webp',
+  exterior: '/manus-storage/async-images/X8I6wlGizQPqQutyAYUk07/image-3.webp',
+  table: '/manus-storage/async-images/X8I6wlGizQPqQutyAYUk07/image-4.webp',
+  spices: '/manus-storage/async-images/X8I6wlGizQPqQutyAYUk07/image-5.webp'
 };
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const header = document.querySelector('[data-header]');
@@ -73,7 +78,7 @@ const pageTemplates = {
     <section class="seasonal-list section-dark"><div class="container seasonal-grid"><div><span class="eyebrow">On rotation</span><h2 class="display display-small">A few more<br /><em>reasons to visit.</em></h2></div><div class="seasonal-items"><div><span>01</span><h3>Green mango rasam</h3><p>Bright, peppery, and gone before the rains.</p></div><div><span>02</span><h3>Charred okra chaat</h3><p>Crunch, tang, and a little heat.</p></div><div><span>03</span><h3>Jaggery caramel custard</h3><p>Soft, smoky, with a pinch of salt.</p></div></div></div></section>`,
   '/our-kitchen': () => `${pageBanner('Behind the plate', 'The quiet', 'craft.', ASSETS.story)}
     <section class="route-section section-cream"><div class="container two-col-story">${sectionHeading('01','Meet the kitchen','Cook with','curiosity.')}<div class="route-prose reveal-up"><p class="lede">The kitchen is a place for questions. What happens if we leave the spice whole? What if the richest thing on the plate is the simplest?</p><p>Our cooks follow the ingredient, keep the ego out of the way, and let time do some of the talking. Every service is a conversation between prep, fire, pass, and table.</p><p>We work with small farms, coastal suppliers, and makers who understand that good food begins long before it reaches the room.</p><a class="text-link burgundy-link" href="/about">Read the Wilton story <span>↗</span></a></div></div></section>
-    <section class="route-section section-cream"><div class="container kitchen-gallery"><div class="kitchen-card kitchen-card-large"><img src="${ASSETS.interior}" alt="Wilton dining room at dusk" loading="lazy" /><span>01 / the room</span></div><div class="kitchen-card"><img src="${ASSETS.fire}" alt="Food coming from the Wilton fire" loading="lazy" /><span>02 / the fire</span></div><div class="kitchen-card"><img src="${ASSETS.vegetarian}" alt="Seasonal vegetables prepared at Wilton" loading="lazy" /><span>03 / the season</span></div></div></section>`,
+    <section class="route-section section-cream"><div class="container kitchen-gallery"><div class="kitchen-card kitchen-card-large"><img src="${ASSETS.interior}" alt="Wilton dining room at dusk" loading="lazy" /><span>01 / the room</span></div><div class="kitchen-card"><img src="${ASSETS.chef}" alt="Wilton chef in the open kitchen" loading="lazy" /><span>02 / the people</span></div><div class="kitchen-card"><img src="${ASSETS.spices}" alt="Spices and ingredients prepared for service" loading="lazy" /><span>03 / the season</span></div></div></section>`,
   '/latest-news': () => `${pageBanner('From the journal', 'Notes from', 'around the table.', ASSETS.event)}
     <section class="route-section section-cream"><div class="container archive-head">${sectionHeading('01','The archive','Small stories.','Good reasons.')}<p class="lede reveal-up">Kitchen notes, field trips, new plates, and the people who make Wilton feel like Wilton.</p></div><div class="container news-grid">${newsData.map((news, index) => `<a class="news-card reveal-up" style="--delay:${index * 80}ms" href="/latest-news/${news.slug}"><div class="news-image"><img src="${news.image}" alt="${news.title}" loading="lazy" /><span class="news-date">${news.date}</span></div><div class="news-card-copy"><span class="eyebrow">${news.tag}</span><h2>${news.title}</h2><span class="text-link burgundy-link">Read note <span>↗</span></span></div></a>`).join('')}</div></section>`,
   '/promotions-events': () => `${pageBanner('Good things on the calendar', 'Make an', 'occasion of it.', ASSETS.event)}
@@ -149,7 +154,8 @@ function setupHomeCarousel() {
     {image:ASSETS.breakfast, title:'Start with', italic:'something warm.', intro:'Morning plates, strong coffee, and enough time for one more story.', kicker:'Breakfast · served slowly'},
     {image:ASSETS.fire, title:'Follow the', italic:'smoke home.', intro:'From the fire, with charred edges, bright herbs, and a little theatre.', kicker:'Tandoor · grill · roast'},
     {image:ASSETS.special, title:'Taste the', italic:'coast at dusk.', intro:'Coconut, curry leaf, tamarind, and the memory of a shoreline.', kicker:'Coastal · seasonal · generous'},
-    {image:ASSETS.event, title:'Stay for', italic:'one more glass.', intro:'An evening that takes its own shape, at a table that is already yours.', kicker:'Good company · always welcome'}
+    {image:ASSETS.event, title:'Stay for', italic:'one more glass.', intro:'An evening that takes its own shape, at a table that is already yours.', kicker:'Good company · always welcome'},
+    {image:ASSETS.chef, title:'Meet the', italic:'quiet hands.', intro:'The people behind the plate know when to turn up the heat — and when to let it rest.', kicker:'The kitchen · behind the plate'}
   ];
   let active = 0;
   hero.insertAdjacentHTML('beforeend', `<div class="hero-carousel-controls" aria-label="Hero slides"><button class="hero-arrow" data-hero-prev aria-label="Previous slide">←</button><div class="hero-slide-dots">${slides.map((_,i)=>`<button class="hero-dot${i===0?' active':''}" data-hero-slide="${i}" aria-label="Go to slide ${i+1}" aria-current="${i===0}"></button>`).join('')}</div><button class="hero-arrow" data-hero-next aria-label="Next slide">→</button></div>`);
@@ -212,11 +218,47 @@ function setupForms() {
   }));
 }
 
+function setupMotionLayer() {
+  const wipe = document.createElement('div');
+  wipe.className = 'page-transition';
+  document.body.prepend(wipe);
+  document.querySelectorAll('a[href^="/"]').forEach((link) => link.addEventListener('click', (event) => {
+    const href = link.getAttribute('href');
+    if (!href || href === currentPath || href.startsWith('/#') || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (!reducedMotion) {
+      wipe.classList.add('is-active');
+      window.setTimeout(() => window.location.assign(href), 300);
+    } else {
+      window.location.assign(href);
+    }
+  }));
+  const ribbon = document.querySelector('[data-ribbon]');
+  if (ribbon && !reducedMotion && window.matchMedia('(min-width: 901px)').matches) {
+    let raf;
+    let paused = false;
+    const drift = () => {
+      if (!paused) {
+        ribbon.scrollLeft += 0.22;
+        if (ribbon.scrollLeft >= ribbon.scrollWidth - ribbon.clientWidth - 1) ribbon.scrollLeft = 0;
+      }
+      raf = window.requestAnimationFrame(drift);
+    };
+    ribbon.addEventListener('mouseenter', () => { paused = true; });
+    ribbon.addEventListener('mouseleave', () => { paused = false; });
+    ribbon.addEventListener('focusin', () => { paused = true; });
+    ribbon.addEventListener('focusout', () => { paused = false; });
+    raf = window.requestAnimationFrame(drift);
+    window.addEventListener('pagehide', () => window.cancelAnimationFrame(raf), { once: true });
+  }
+}
+
 const routeRendered = renderRoute();
 setupHomeCarousel();
 observeReveals();
 setupScroll();
 setupForms();
+setupMotionLayer();
 
 if (routeRendered) window.scrollTo({ top: 0, behavior: 'auto' });
 

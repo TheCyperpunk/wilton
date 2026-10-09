@@ -12,3 +12,5 @@
 - [x] Use a premium visual system with deep burgundy, warm cream, editorial serif headlines, original hospitality photography, image layering, hover treatments, and controlled carousel motion.
 - [x] Implement scroll-reveal animations, parallax where appropriate, card/image hover effects, carousel controls, staggered route content, focus-visible states, and reduced-motion fallbacks.
 - [x] Keep route metadata synchronized in `public/manus-routes.json` and serve the route shell from the managed preview server.
+- [x] Add a second original imagery set for chef, cocktail, exterior, table, and spice moments, and wire it into the carousel, kitchen route, and homepage image ribbon.
+- [x] Add branded page-wipe transitions, slow desktop ribbon drift, clip-path image reveals, richer hover zooms, and reduced-motion fallbacks.
