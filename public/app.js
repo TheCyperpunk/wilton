@@ -168,6 +168,10 @@ function setupHomeCarousel() {
     window.setTimeout(() => {
       heroImage.style.setProperty('--image', `url('${slide.image}')`);
       title.innerHTML = `${slide.title}<br /><em>${slide.italic}</em>`;
+      title.dataset.fontReady = 'false';
+      prepareFontElement(title);
+      title.classList.remove('font-in-view');
+      window.requestAnimationFrame(() => title.classList.add('font-in-view'));
       intro.textContent = slide.intro;
       index.innerHTML = `${String(active + 1).padStart(2,'0')} <span>/</span> 0${slides.length}`;
       hero.querySelector('.hero-kicker span:last-child').textContent = slide.kicker;
@@ -183,6 +187,47 @@ function setupHomeCarousel() {
   const start = () => { if (!reducedMotion) timer = window.setInterval(() => renderSlide(active + 1), 7200); };
   const stop = () => window.clearInterval(timer);
   hero.addEventListener('mouseenter', stop); hero.addEventListener('mouseleave', start); hero.addEventListener('focusin', stop); hero.addEventListener('focusout', start); start();
+}
+
+function prepareFontElement(element) {
+  if (!element || element.dataset.fontReady === 'true') return;
+  const label = element.textContent.replace(/\s+/g, ' ').trim();
+  element.setAttribute('aria-label', label);
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+  let wordIndex = 0;
+  textNodes.forEach((node) => {
+    const fragment = document.createDocumentFragment();
+    node.textContent.split(/(\s+)/).forEach((part) => {
+      if (!part) return;
+      if (/\s+/.test(part)) fragment.appendChild(document.createTextNode(part));
+      else {
+        const word = document.createElement('span');
+        word.className = 'font-word';
+        word.setAttribute('aria-hidden', 'true');
+        word.style.setProperty('--word-index', wordIndex++);
+        word.textContent = part;
+        fragment.appendChild(word);
+      }
+    });
+    node.replaceWith(fragment);
+  });
+  element.classList.add('font-motion');
+  element.dataset.fontReady = 'true';
+}
+
+function setupFontMotion() {
+  const targets = document.querySelectorAll('.display, .route-heading h2, .section-head .eyebrow, .route-prose .lede, .hero-intro');
+  targets.forEach(prepareFontElement);
+  const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.target.classList.toggle('font-in-view', entry.isIntersecting)), { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach((target) => observer.observe(target));
+  const headlines = document.querySelectorAll('.font-motion');
+  if (!reducedMotion) window.addEventListener('scroll', () => headlines.forEach((headline) => {
+    const rect = headline.getBoundingClientRect();
+    const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    headline.style.setProperty('--headline-y', `${Math.max(-8, Math.min(8, (progress - .5) * -14))}px`);
+  }), { passive: true });
 }
 
 function setupScroll() {
@@ -287,6 +332,7 @@ function setupMotionLayer() {
 const routeRendered = renderRoute();
 setupHomeCarousel();
 decorateImageSections();
+setupFontMotion();
 observeReveals();
 setupScroll();
 setupForms();

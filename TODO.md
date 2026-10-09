@@ -19,3 +19,4 @@
 - [x] Convert cream and dark content bands into image-backed sections with alternating Wilton imagery, stronger overlays, tighter spacing, photographic texture, and scroll-driven background drift.
 - [x] Add denser scene separators, animated section rules, compact editorial blocks, and stronger mobile image transitions inspired by the supplied reference.
 - [x] Add fixed, edge-to-edge three-panel image mosaics to cream, burgundy, and dark content bands with stable object-fit cropping, section-specific image rotation, readable overlays, and responsive two-panel mobile stacking.
+- [x] Add scroll-triggered word-by-word typography reveals with blur-clear and lift motion, subtle headline drift tied to scroll position, hero-slide replays, and reduced-motion/accessibility fallbacks.
