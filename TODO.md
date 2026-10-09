@@ -1,12 +1,14 @@
 # Wilton Restaurant Website — Outcomes
 
-- [x] Build a responsive homepage with an immersive layered hero, original Wilton messaging, full-bleed food imagery, and prominent View Menu and Reserve a Table calls to action.
-- [x] Add a brand story and about section presenting Wilton’s identity and heritage through original editorial copy and imagery.
-- [x] Add a menu category showcase with clear navigation across key food and beverage groupings.
-- [x] Add a specials section highlighting signature dishes, seasonal selections, or featured dining experiences.
-- [x] Add a chef and culinary philosophy section focused on ingredients, craft, and Wilton’s approach to Indian cuisine.
-- [x] Add locations and contact information with address, opening hours, phone or email details, and reservation prompts.
-- [x] Add a social and news area for restaurant updates, press, events, or selected social content.
-- [x] Use a premium visual system with deep burgundy, warm cream, editorial serif headlines, rich food photography, and distinctly original Wilton branding.
-- [x] Implement subtle scroll-reveal animations, image layering, hover interactions, and smooth transitions with reduced-motion support.
-- [x] Use accessible semantic structure, keyboard-friendly interactions, readable contrast, responsive navigation, and a complete footer.
+- [x] Build a responsive homepage with an immersive multi-slide hero, original Wilton messaging, full-bleed food imagery, and prominent menu, ordering, and reservation calls to action.
+- [x] Add a full-screen, responsive navigation shell with accessible menu controls, route-aware links, mobile behavior, and a utility-rich footer.
+- [x] Add Wilton story, history, kitchen, values, trust, and provenance sections with original editorial copy and imagery.
+- [x] Add a full menu route with category discovery, dietary guidance, seasonal direction, and links into category archives.
+- [x] Add responsive menu category archives with breakfast, fire, coastal, vegetarian, dessert, and beverage groupings, dietary markers, and dish-level cards.
+- [x] Add a specials route with signature dish storytelling, seasonal rotation, and reservation actions.
+- [x] Add latest-news and promotions/events archives plus dynamic detail routes with dated cards, imagery, and clear return/conversion actions.
+- [x] Add locations and dynamic outlet detail routes with address, opening hours, direct phone links, room imagery, and reservation prompts.
+- [x] Add reservation, order-online, contact, feedback, allergen, privacy, terms, and accessibility routes with semantic forms and confirmation states.
+- [x] Use a premium visual system with deep burgundy, warm cream, editorial serif headlines, original hospitality photography, image layering, hover treatments, and controlled carousel motion.
+- [x] Implement scroll-reveal animations, parallax where appropriate, card/image hover effects, carousel controls, staggered route content, focus-visible states, and reduced-motion fallbacks.
+- [x] Keep route metadata synchronized in `public/manus-routes.json` and serve the route shell from the managed preview server.

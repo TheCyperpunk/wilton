@@ -28,6 +28,11 @@ createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': types[extname(filePath)] || 'application/octet-stream' });
     res.end(await readFile(filePath));
   } catch {
+    if (!extname(safePath)) {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(await readFile(join(root, 'index.html')));
+      return;
+    }
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('Not found');
   }
