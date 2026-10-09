@@ -227,6 +227,7 @@ function setupFontMotion() {
     const rect = headline.getBoundingClientRect();
     const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
     headline.style.setProperty('--headline-y', `${Math.max(-8, Math.min(8, (progress - .5) * -14))}px`);
+    headline.style.setProperty('--headline-x', `${Math.max(-12, Math.min(12, (progress - .5) * 20))}px`);
   }), { passive: true });
 }
 

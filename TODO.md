@@ -24,3 +24,4 @@
 - [x] Replace the repeated background-image treatment with five section layout grammars: mosaic, split image, paper/editorial, poster, and gallery strip, while preserving shared Wilton typography, color, and motion language.
 - [x] Move the desktop hero headline, intro, and actions into a tighter right-side editorial column while preserving mobile stacking and readability.
 - [x] Correct the desktop hero alignment so the headline, intro, and actions sit in the left-side negative space closer to the edge, with unchanged mobile stacking.
+- [x] Adapt the supplied site’s typography motion language into Wilton with restrained serif/mono pairing, a continuous moving principle-word strip, horizontal scroll-linked headline drift, and preserved word-by-word reveals with reduced-motion support.
