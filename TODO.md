@@ -31,3 +31,4 @@
 - [x] Optimize the entire website for phone use with one requestAnimationFrame scroll scheduler, cached parallax targets, async/lazy image loading, hero preload, gzip responses, cache headers, overflow guards, touch-safe controls, and responsive checks across home, menu, contact, reserve, and location routes.
 - [x] Correct the “Come by” visit section alignment with a balanced desktop two-column layout, three aligned detail blocks, and a clean mobile single-column stack.
 - [x] Disable automatic hero rotation so the six food slides remain stable until the visitor uses the arrows or indicator dots manually.
+- [x] Restore faster automatic cycling for the six hero images at 4.2 seconds and remove the scroll prompt, vertical marker, bottom status labels, and arrow controls, leaving only subtle slide indicators.

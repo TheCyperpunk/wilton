@@ -168,7 +168,7 @@ function setupHomeCarousel() {
     {image:ASSETS.chef, title:'Meet the', italic:'quiet hands.', intro:'The people behind the plate know when to turn up the heat — and when to let it rest.', kicker:'The kitchen · behind the plate'}
   ];
   let active = 0;
-  hero.insertAdjacentHTML('beforeend', `<div class="hero-carousel-controls" aria-label="Hero slides"><button class="hero-arrow" data-hero-prev aria-label="Previous slide">←</button><div class="hero-slide-dots">${slides.map((_,i)=>`<button class="hero-dot${i===0?' active':''}" data-hero-slide="${i}" aria-label="Go to slide ${i+1}" aria-current="${i===0}"></button>`).join('')}</div><button class="hero-arrow" data-hero-next aria-label="Next slide">→</button></div>`);
+  hero.insertAdjacentHTML('beforeend', `<div class="hero-carousel-controls" aria-label="Hero slides"><div class="hero-slide-dots">${slides.map((_,i)=>`<button class="hero-dot${i===0?' active':''}" data-hero-slide="${i}" aria-label="Go to slide ${i+1}" aria-current="${i===0}"></button>`).join('')}</div></div>`);
   const dots = [...hero.querySelectorAll('[data-hero-slide]')];
   const renderSlide = (next) => {
     active = (next + slides.length) % slides.length;
@@ -190,9 +190,11 @@ function setupHomeCarousel() {
     }, reducedMotion ? 0 : 260);
     dots.forEach((dot, i) => { dot.classList.toggle('active', i === active); dot.setAttribute('aria-current', String(i === active)); });
   };
-  hero.querySelector('[data-hero-prev]').addEventListener('click', () => renderSlide(active - 1));
-  hero.querySelector('[data-hero-next]').addEventListener('click', () => renderSlide(active + 1));
   dots.forEach((dot) => dot.addEventListener('click', () => renderSlide(Number(dot.dataset.heroSlide))));
+  let timer;
+  const start = () => { if (!reducedMotion) timer = window.setInterval(() => renderSlide(active + 1), 4200); };
+  const stop = () => window.clearInterval(timer);
+  hero.addEventListener('mouseenter', stop); hero.addEventListener('mouseleave', start); hero.addEventListener('focusin', stop); hero.addEventListener('focusout', start); start();
 }
 
 function prepareFontElement(element) {
