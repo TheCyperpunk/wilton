@@ -30,3 +30,4 @@
 - [x] Remove the homepage “Make an evening of it” reservation callout, description, and phone CTA while keeping the dedicated `/reserve` route available.
 - [x] Optimize the entire website for phone use with one requestAnimationFrame scroll scheduler, cached parallax targets, async/lazy image loading, hero preload, gzip responses, cache headers, overflow guards, touch-safe controls, and responsive checks across home, menu, contact, reserve, and location routes.
 - [x] Correct the “Come by” visit section alignment with a balanced desktop two-column layout, three aligned detail blocks, and a clean mobile single-column stack.
+- [x] Disable automatic hero rotation so the six food slides remain stable until the visitor uses the arrows or indicator dots manually.

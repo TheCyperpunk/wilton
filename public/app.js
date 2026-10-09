@@ -193,10 +193,6 @@ function setupHomeCarousel() {
   hero.querySelector('[data-hero-prev]').addEventListener('click', () => renderSlide(active - 1));
   hero.querySelector('[data-hero-next]').addEventListener('click', () => renderSlide(active + 1));
   dots.forEach((dot) => dot.addEventListener('click', () => renderSlide(Number(dot.dataset.heroSlide))));
-  let timer;
-  const start = () => { if (!reducedMotion) timer = window.setInterval(() => renderSlide(active + 1), 7200); };
-  const stop = () => window.clearInterval(timer);
-  hero.addEventListener('mouseenter', stop); hero.addEventListener('mouseleave', start); hero.addEventListener('focusin', stop); hero.addEventListener('focusout', start); start();
 }
 
 function prepareFontElement(element) {
