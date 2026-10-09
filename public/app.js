@@ -265,15 +265,18 @@ function setupForms() {
 
 function decorateImageSections() {
   const sectionImages = [ASSETS.story, ASSETS.special, ASSETS.interior, ASSETS.vegetarian, ASSETS.breakfast];
+  const variants = ['mosaic', 'split', 'paper', 'poster', 'gallery'];
   document.querySelectorAll('.section-cream').forEach((section, index) => {
     if (section.classList.contains('inner-banner') || section.dataset.noImage) return;
     section.classList.add('image-section');
+    section.classList.add(`image-variant-${variants[index % variants.length]}`);
     section.dataset.imageSection = 'true';
     section.style.setProperty('--section-image', `url('${sectionImages[index % sectionImages.length]}')`);
     if (!section.querySelector('.fixed-media-grid')) section.insertAdjacentHTML('afterbegin', `<div class="fixed-media-grid" aria-hidden="true"><img src="${sectionImages[index % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 1) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 2) % sectionImages.length]}" alt="" /></div>`);
   });
   document.querySelectorAll('.section-dark:not(.hero):not(.inner-banner):not(.site-footer), .section-burgundy').forEach((section, index) => {
     section.classList.add('image-dark-section');
+    section.classList.add(`image-variant-${variants[(index + 2) % variants.length]}`);
     section.dataset.imageSection = 'true';
     section.style.setProperty('--section-image', `url('${sectionImages[(index + 2) % sectionImages.length]}')`);
     if (!section.querySelector('.fixed-media-grid')) section.insertAdjacentHTML('afterbegin', `<div class="fixed-media-grid" aria-hidden="true"><img src="${sectionImages[(index + 2) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 3) % sectionImages.length]}" alt="" /><img src="${sectionImages[(index + 4) % sectionImages.length]}" alt="" /></div>`);
