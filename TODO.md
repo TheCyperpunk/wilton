@@ -14,3 +14,5 @@
 - [x] Keep route metadata synchronized in `public/manus-routes.json` and serve the route shell from the managed preview server.
 - [x] Add a second original imagery set for chef, cocktail, exterior, table, and spice moments, and wire it into the carousel, kitchen route, and homepage image ribbon.
 - [x] Add branded page-wipe transitions, slow desktop ribbon drift, clip-path image reveals, richer hover zooms, and reduced-motion fallbacks.
+- [x] Add a Paragon-inspired six-beat visual rhythm with a cinematic image ribbon, pinned service story, scroll-aware scene activation, layered chapter captions, and branded page-wipe transitions.
+- [x] Keep the visible motion sequence free of pending placeholders by using the completed Wilton image library while additional generated assets process independently.
