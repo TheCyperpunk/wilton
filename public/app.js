@@ -218,6 +218,30 @@ function setupForms() {
   }));
 }
 
+function decorateImageSections() {
+  const sectionImages = [ASSETS.story, ASSETS.special, ASSETS.interior, ASSETS.vegetarian, ASSETS.breakfast];
+  document.querySelectorAll('.section-cream').forEach((section, index) => {
+    if (section.classList.contains('inner-banner') || section.dataset.noImage) return;
+    section.classList.add('image-section');
+    section.dataset.imageSection = 'true';
+    section.style.setProperty('--section-image', `url('${sectionImages[index % sectionImages.length]}')`);
+  });
+  document.querySelectorAll('.section-dark:not(.hero):not(.inner-banner):not(.site-footer), .section-burgundy').forEach((section, index) => {
+    section.classList.add('image-dark-section');
+    section.dataset.imageSection = 'true';
+    section.style.setProperty('--section-image', `url('${sectionImages[(index + 2) % sectionImages.length]}')`);
+  });
+  const imageSections = document.querySelectorAll('[data-image-section]');
+  if (!imageSections.length) return;
+  const sectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => entry.target.classList.toggle('section-in-view', entry.isIntersecting)), { threshold: 0.18 });
+  imageSections.forEach((section) => sectionObserver.observe(section));
+  if (!reducedMotion) window.addEventListener('scroll', () => imageSections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    section.style.setProperty('--section-shift', `${Math.round((progress - .5) * -7)}%`);
+  }), { passive: true });
+}
+
 function setupMotionLayer() {
   const wipe = document.createElement('div');
   wipe.className = 'page-transition';
@@ -260,6 +284,7 @@ function setupMotionLayer() {
 
 const routeRendered = renderRoute();
 setupHomeCarousel();
+decorateImageSections();
 observeReveals();
 setupScroll();
 setupForms();

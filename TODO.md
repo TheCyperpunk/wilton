@@ -16,3 +16,5 @@
 - [x] Add branded page-wipe transitions, slow desktop ribbon drift, clip-path image reveals, richer hover zooms, and reduced-motion fallbacks.
 - [x] Add a Paragon-inspired six-beat visual rhythm with a cinematic image ribbon, pinned service story, scroll-aware scene activation, layered chapter captions, and branded page-wipe transitions.
 - [x] Keep the visible motion sequence free of pending placeholders by using the completed Wilton image library while additional generated assets process independently.
+- [x] Convert cream and dark content bands into image-backed sections with alternating Wilton imagery, stronger overlays, tighter spacing, photographic texture, and scroll-driven background drift.
+- [x] Add denser scene separators, animated section rules, compact editorial blocks, and stronger mobile image transitions inspired by the supplied reference.
