@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6b1022" />
+    <meta name="description" content="Wilton — a modern Indian dining room where heritage meets a quieter kind of luxury." />
+    <title>Wilton — A table for the curious</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Wilton home">
+        <span class="brand-seal" aria-hidden="true"><span>W</span></span>
+        <span class="brand-name">Wilton</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#story">Our story</a>
+        <a href="#menu">Menu</a>
+        <a href="#journal">Journal</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <a class="header-cta" href="#reserve">Reserve a table <span>↗</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span><b class="sr-only">Open menu</b></button>
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <a href="#story">Our story</a><a href="#menu">Menu</a><a href="#journal">Journal</a><a href="#visit">Visit</a><a class="mobile-reserve" href="#reserve">Reserve a table <span>↗</span></a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-dark" aria-labelledby="hero-title">
+        <div class="hero-image" data-parallax style="--image: url('/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-1.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grid">
+          <div class="hero-kicker reveal-up"><span class="eyebrow-line"></span><span>Modern Indian dining · Est. 1986</span></div>
+          <div class="hero-copy">
+            <p class="hero-index reveal-up">01 <span>/</span> 04</p>
+            <h1 id="hero-title" class="display reveal-up" style="--delay: 120ms">A table<br /><em>for the curious.</em></h1>
+            <p class="hero-intro reveal-up" style="--delay: 220ms">A little fire. A little nostalgia. A generous table set for the stories we bring with us.</p>
+            <div class="hero-actions reveal-up" style="--delay: 320ms"><a class="button button-light" href="#menu">Explore the menu <span>↗</span></a><a class="text-link light-link" href="#story">Meet Wilton <span>↘</span></a></div>
+          </div>
+          <div class="hero-aside reveal-up" style="--delay: 400ms"><span>Scroll to savour</span><span class="scroll-line"></span><span class="vertical-word">WILTON / 01</span></div>
+        </div>
+        <div class="hero-bottom"><span>Good food, unhurried.</span><span>Open Tuesday — Sunday</span></div>
+      </section>
+
+      <section class="statement section-cream" id="story" aria-labelledby="story-title">
+        <div class="container statement-grid">
+          <div class="statement-label reveal-up"><span class="section-number">01</span><span class="eyebrow">The Wilton way</span></div>
+          <div class="statement-copy">
+            <h2 id="story-title" class="display display-small reveal-up">Rooted in memory.<br /><em>Made for now.</em></h2>
+            <p class="lede reveal-up" style="--delay: 100ms">Wilton is a modern Indian dining room shaped by the places, people, and passing plates that made us fall in love with food.</p>
+            <p class="body-copy reveal-up" style="--delay: 180ms">We cook with the familiar in mind, then take one small step sideways. Coastal spice meets city rhythm. Old recipes get a new point of view. Everything arrives with warmth, intention, and a little room for surprise.</p>
+            <a class="text-link burgundy-link reveal-up" style="--delay: 260ms" href="#philosophy">Our point of view <span>↗</span></a>
+          </div>
+          <div class="statement-stamp reveal-up" style="--delay: 150ms"><span class="stamp-ring">From our kitchen<br />with feeling</span><span class="stamp-star">✳</span></div>
+        </div>
+      </section>
+
+      <section class="story-image-section section-cream" aria-label="Wilton kitchen story">
+        <div class="container image-story-grid">
+          <div class="story-image-wrap reveal-up"><img src="/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-2.webp" alt="A chef finishing a dish in Wilton's open kitchen" loading="lazy" /><span class="image-caption">The small details matter.</span></div>
+          <div class="story-note reveal-up" style="--delay: 180ms"><span class="note-mark">✦</span><p>“The best meals leave a little of themselves behind.”</p><span class="note-author">— Kitchen notes, volume 01</span></div>
+        </div>
+      </section>
+
+      <section class="menu-section section-burgundy" id="menu" aria-labelledby="menu-title">
+        <div class="container">
+          <div class="section-head light-head reveal-up"><div><span class="section-number">02</span><span class="eyebrow">What’s on the table</span></div><span class="section-marker">A menu in motion <i>↗</i></span></div>
+          <div class="menu-intro"><h2 id="menu-title" class="display display-small reveal-up">A little<br /><em>something for everyone.</em></h2><p class="menu-copy reveal-up" style="--delay: 120ms">A seasonally minded menu that travels from breakfast plates to late-night pours, with plenty of reasons to stay for one more.</p></div>
+          <div class="menu-tabs reveal-up" role="tablist" aria-label="Menu categories">
+            <button class="menu-tab active" data-menu="all" role="tab" aria-selected="true">All</button><button class="menu-tab" data-menu="from-the-fire" role="tab" aria-selected="false">From the fire</button><button class="menu-tab" data-menu="coastal" role="tab" aria-selected="false">Coastal</button><button class="menu-tab" data-menu="vegetarian" role="tab" aria-selected="false">Vegetarian</button><button class="menu-tab" data-menu="sweet" role="tab" aria-selected="false">Sweet things</button>
+          </div>
+          <div class="menu-list" aria-live="polite">
+            <article class="menu-item" data-category="coastal"><div class="menu-item-no">01</div><div><h3>Kerala prawn moilee</h3><p>Coconut, green chilli, curry leaf</p></div><span class="menu-price">₹ 780</span></article>
+            <article class="menu-item" data-category="from-the-fire"><div class="menu-item-no">02</div><div><h3>Wilton pepper chicken</h3><p>Black pepper, charred onion, coriander</p></div><span class="menu-price">₹ 690</span></article>
+            <article class="menu-item" data-category="vegetarian"><div class="menu-item-no">03</div><div><h3>Smoked beetroot kebab</h3><p>Cashew cream, pickled mustard seed</p></div><span class="menu-price">₹ 520</span></article>
+            <article class="menu-item" data-category="coastal"><div class="menu-item-no">04</div><div><h3>Malabar fish curry</h3><p>Kudampuli, coconut, fresh turmeric</p></div><span class="menu-price">₹ 720</span></article>
+            <article class="menu-item" data-category="sweet"><div class="menu-item-no">05</div><div><h3>Cardamom milk cake</h3><p>Rose petal, pistachio, sea salt</p></div><span class="menu-price">₹ 390</span></article>
+          </div>
+          <div class="menu-foot reveal-up"><p>Our menu changes with the market.</p><a class="button button-outline" href="#reserve">View full menu <span>↗</span></a></div>
+        </div>
+      </section>
+
+      <section class="special-section section-cream" id="specials" aria-labelledby="special-title">
+        <div class="container special-grid">
+          <div class="special-copy"><div class="section-head reveal-up"><div><span class="section-number">03</span><span class="eyebrow">Wilton special</span></div><span class="section-marker">On rotation <i>✳</i></span></div><h2 id="special-title" class="display display-small reveal-up">The dish<br /><em>everyone talks about.</em></h2><p class="lede reveal-up" style="--delay: 110ms">Sea, smoke, and a generous squeeze of lime. Our signature curry is a slow conversation between the coast and the city.</p><p class="body-copy reveal-up" style="--delay: 180ms">Ask what’s in the clay pot tonight — we’ll tell you where it came from, how we cooked it, and what to order alongside.</p><a class="text-link burgundy-link reveal-up" style="--delay: 250ms" href="#reserve">Book your table <span>↗</span></a></div>
+          <div class="special-art reveal-up" style="--delay: 140ms"><div class="special-art-frame"><img src="/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-3.webp" alt="Wilton signature seafood curry with curry leaves and charred lime" loading="lazy" /><span class="art-badge">Today’s<br /><em>favourite</em></span></div><div class="art-caption"><span>03 / signature</span><span>slow-cooked, always worth it</span></div></div>
+        </div>
+      </section>
+
+      <section class="philosophy section-dark" id="philosophy" aria-labelledby="philosophy-title">
+        <div class="philosophy-bg" data-parallax style="--image: url('/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-4.webp')"></div><div class="philosophy-overlay"></div>
+        <div class="container philosophy-content"><div class="section-head light-head reveal-up"><div><span class="section-number">04</span><span class="eyebrow">Behind the plate</span></div><span class="section-marker">The quiet craft <i>↘</i></span></div><div class="philosophy-main"><h2 id="philosophy-title" class="display reveal-up">Cook with<br /><em>curiosity.</em></h2><div class="philosophy-copy reveal-up" style="--delay: 160ms"><p>Our kitchen is a place for questions. What happens if we leave the spice whole? What if the richest thing on the plate is the simplest?</p><p>We follow the ingredient, keep the ego out of the way, and let time do some of the talking.</p><a class="text-link light-link" href="#visit">Meet the people behind Wilton <span>↗</span></a></div></div></div>
+      </section>
+
+      <section class="journal section-cream" id="journal" aria-labelledby="journal-title">
+        <div class="container"><div class="section-head reveal-up"><div><span class="section-number">05</span><span class="eyebrow">From the journal</span></div><a class="section-marker burgundy-marker" href="#journal">See all notes <i>↗</i></a></div><div class="journal-grid"><article class="journal-card journal-card-large reveal-up"><div class="journal-card-art art-burgundy"><span class="journal-glyph">✳</span><span class="journal-tag">Dispatch 01</span></div><div class="journal-card-copy"><span class="journal-date">12.08.24 · Notes from the kitchen</span><h3>Why we keep the good stuff on the table.</h3><a class="circle-link" href="#journal" aria-label="Read Why we keep the good stuff on the table">↗</a></div></article><article class="journal-card reveal-up" style="--delay: 100ms"><div class="journal-card-art art-cream"><span class="journal-glyph">02</span><span class="journal-tag">Field notes</span></div><div class="journal-card-copy"><span class="journal-date">04.07.24 · Around the corner</span><h3>A morning at the spice market.</h3><a class="circle-link" href="#journal" aria-label="Read A morning at the spice market">↗</a></div></article><article class="journal-card reveal-up" style="--delay: 180ms"><div class="journal-card-art art-line"><span class="journal-glyph">✦</span><span class="journal-tag">The table</span></div><div class="journal-card-copy"><span class="journal-date">22.06.24 · Good company</span><h3>In praise of a long lunch.</h3><a class="circle-link" href="#journal" aria-label="Read In praise of a long lunch">↗</a></div></article></div></div>
+      </section>
+
+      <section class="visit-section section-burgundy" id="visit" aria-labelledby="visit-title">
+        <div class="container visit-grid"><div class="visit-copy"><div class="section-head light-head reveal-up"><div><span class="section-number">06</span><span class="eyebrow">Come by</span></div></div><h2 id="visit-title" class="display display-small reveal-up">There’s always<br /><em>room at our table.</em></h2><p class="lede light-lede reveal-up" style="--delay: 120ms">Drop in for a quick plate, settle in for the evening, or save us for a special occasion.</p><a class="button button-light reveal-up" style="--delay: 220ms" href="#reserve">Reserve a table <span>↗</span></a></div><div class="visit-details reveal-up" style="--delay: 160ms"><div class="detail-block"><span class="eyebrow">Wilton, Fort</span><p>14, Harbour Road<br />Mumbai 400001</p><a href="tel:+912240000000">+91 22 4000 0000</a></div><div class="detail-block"><span class="eyebrow">Opening hours</span><p>Tue — Thu&nbsp;&nbsp; 12:00 — 23:00<br />Fri — Sun&nbsp;&nbsp; 12:00 — 00:00<br /><em>Closed Mondays</em></p></div><div class="detail-block"><span class="eyebrow">Say hello</span><p><a href="mailto:hello@wilton.house">hello@wilton.house</a><br /><a href="#journal">Instagram ↗</a></p></div></div></div>
+      </section>
+
+      <section class="reserve-band section-cream" id="reserve" aria-labelledby="reserve-title"><div class="container reserve-grid"><div class="reserve-mark reveal-up"><span class="brand-seal large-seal"><span>W</span></span><span class="eyebrow">A little time well spent</span></div><div class="reserve-copy"><h2 id="reserve-title" class="display display-small reveal-up">Make an evening<br /><em>of it.</em></h2><p class="lede reveal-up" style="--delay: 120ms">For parties of eight or more, or if you’d like to make a special request, give us a call.</p><a class="button button-burgundy reveal-up" style="--delay: 220ms" href="tel:+912240000000">Call +91 22 4000 0000 <span>↗</span></a></div></div></section>
+    </main>
+
+    <footer class="site-footer section-dark"><div class="container footer-grid"><div class="footer-brand"><a class="brand light-brand" href="#top"><span class="brand-seal"><span>W</span></span><span class="brand-name">Wilton</span></a><p>Modern Indian dining,<br />made with feeling.</p></div><div class="footer-links"><div><span class="eyebrow">Explore</span><a href="#story">Our story</a><a href="#menu">Menu</a><a href="#journal">Journal</a></div><div><span class="eyebrow">Follow along</span><a href="#journal">Instagram ↗</a><a href="#journal">Press enquiries</a><a href="mailto:hello@wilton.house">Email us ↗</a></div></div><div class="footer-meta"><span>© 2024 Wilton House</span><span>Made for long lunches.</span></div></div></footer>
+    <div class="side-dots" aria-label="Page sections"><a href="#top" class="active" aria-label="Go to top"></a><a href="#story" aria-label="Go to story"></a><a href="#menu" aria-label="Go to menu"></a><a href="#specials" aria-label="Go to specials"></a><a href="#philosophy" aria-label="Go to philosophy"></a><a href="#visit" aria-label="Go to visit"></a></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
