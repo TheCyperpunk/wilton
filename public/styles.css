@@ -61,3 +61,7 @@
 /* Hero alignment: right-side editorial lockup */
 @media (min-width:901px){.hero-grid{grid-template-columns:.18fr 1fr 1.35fr .22fr;column-gap:0}.hero-kicker{grid-column:1 / 3}.hero-copy{grid-column:3;justify-self:end;max-width:680px;width:100%;margin-top:48px;padding-left:clamp(18px,3vw,54px)}.hero-aside{grid-column:4}.hero-copy .hero-intro{max-width:410px}.hero-copy .hero-actions{justify-content:flex-start}}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-kicker,.hero-copy{grid-column:auto}.hero-copy{padding-left:0;width:auto}}
+
+/* Hero alignment: left-side negative-space lockup */
+@media (min-width:901px){.hero-grid{grid-template-columns:1fr 1.65fr .28fr;column-gap:0}.hero-kicker{grid-column:1}.hero-copy{grid-column:1 / 3;justify-self:start;max-width:650px;width:100%;margin-top:48px;margin-left:0;padding-left:0}.hero-aside{grid-column:3}.hero-copy .hero-intro{max-width:410px}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-kicker,.hero-copy{grid-column:auto}.hero-copy{margin-left:0}}
