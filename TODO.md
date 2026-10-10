@@ -36,3 +36,4 @@
 - [x] Bundle all nine WebP restaurant assets inside `public/assets`, replace Manus-only storage URLs with local paths, and make JavaScript-generated route images resolve correctly on nested paths and GitHub Pages.
 - [x] Fix the `assets/assets/...` resolver bug that broke carousel and nested-route images after local bundling; add a cache-busting script version and verify homepage plus `/menu/breakfast` images load.
 - [x] Make the six-image hero carousel continuously auto-rotate every 2 seconds without pausing on hover, focus, or the browser reduced-motion setting.
+- [x] Match the “Come by” section to the “Wilton special” alignment rhythm: aligned section marker, left editorial copy and CTA, centered right details column, and responsive mobile stacking.
