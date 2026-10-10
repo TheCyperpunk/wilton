@@ -194,7 +194,7 @@ function setupHomeCarousel() {
   };
   dots.forEach((dot) => dot.addEventListener('click', () => renderSlide(Number(dot.dataset.heroSlide))));
   let timer;
-  const start = () => { window.clearInterval(timer); timer = window.setInterval(() => renderSlide(active + 1), 2000); };
+  const start = () => { window.clearInterval(timer); timer = window.setInterval(() => renderSlide(active + 1), 3000); };
   start();
 }
 
