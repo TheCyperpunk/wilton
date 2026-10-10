@@ -93,4 +93,4 @@ html{overflow-x:hidden;scroll-behavior:smooth}body{min-width:320px;overflow-x:hi
 @media (max-width:560px){.visit-section .visit-grid{gap:38px}.visit-section .visit-details{grid-template-columns:1fr;gap:28px}.visit-section .visit-details .detail-block:nth-child(2),.visit-section .visit-details .detail-block:nth-child(3){padding-top:18px;border-top:1px solid rgba(245,239,230,.24)}}
 
 @media (min-width:901px){.visit-section .visit-copy{margin-left:clamp(18px,3vw,44px)}}
-@media (max-width:900px){.visit-section .visit-copy{margin-left:0}}
+@media (max-width:900px){.visit-section .visit-copy{margin-left:18px}}

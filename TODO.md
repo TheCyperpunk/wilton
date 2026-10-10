@@ -38,3 +38,4 @@
 - [x] Make the six-image hero carousel continuously auto-rotate every 2 seconds without pausing on hover, focus, or the browser reduced-motion setting.
 - [x] Match the “Come by” section to the “Wilton special” alignment rhythm: aligned section marker, left editorial copy and CTA, centered right details column, and responsive mobile stacking.
 - [x] Add a small responsive desktop margin to nudge the Come by copy slightly right while keeping mobile flush.
+- [x] Apply the same subtle rightward spacing to the Come by copy on mobile, using an 18px margin while preserving readable responsive layout.
