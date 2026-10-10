@@ -14,7 +14,7 @@ const ASSETS = {
   table: 'assets/5tleMu0a7OVnWWmJ1N3Xsh-image-3.webp',
   spices: 'assets/gSItUlEc9j8IaB0Pddh8rE-image-3.webp'
 };
-const assetBase = new URL('assets/', document.querySelector('script[src$="app.js"]')?.src || document.baseURI);
+const assetBase = new URL('./', document.querySelector('script[src*="app.js"]')?.src || document.baseURI);
 Object.keys(ASSETS).forEach((key) => { ASSETS[key] = new URL(ASSETS[key], assetBase).href; });
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const header = document.querySelector('[data-header]');
