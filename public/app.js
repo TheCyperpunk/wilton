@@ -194,9 +194,8 @@ function setupHomeCarousel() {
   };
   dots.forEach((dot) => dot.addEventListener('click', () => renderSlide(Number(dot.dataset.heroSlide))));
   let timer;
-  const start = () => { if (!reducedMotion) timer = window.setInterval(() => renderSlide(active + 1), 2000); };
-  const stop = () => window.clearInterval(timer);
-  hero.addEventListener('mouseenter', stop); hero.addEventListener('mouseleave', start); hero.addEventListener('focusin', stop); hero.addEventListener('focusout', start); start();
+  const start = () => { window.clearInterval(timer); timer = window.setInterval(() => renderSlide(active + 1), 2000); };
+  start();
 }
 
 function prepareFontElement(element) {

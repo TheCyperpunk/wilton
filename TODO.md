@@ -35,3 +35,4 @@
 - [x] Set the six-slide hero carousel to advance automatically every exactly 2 seconds.
 - [x] Bundle all nine WebP restaurant assets inside `public/assets`, replace Manus-only storage URLs with local paths, and make JavaScript-generated route images resolve correctly on nested paths and GitHub Pages.
 - [x] Fix the `assets/assets/...` resolver bug that broke carousel and nested-route images after local bundling; add a cache-busting script version and verify homepage plus `/menu/breakfast` images load.
+- [x] Make the six-image hero carousel continuously auto-rotate every 2 seconds without pausing on hover, focus, or the browser reduced-motion setting.
