@@ -94,3 +94,6 @@ html{overflow-x:hidden;scroll-behavior:smooth}body{min-width:320px;overflow-x:hi
 
 @media (min-width:901px){.visit-section .visit-copy{margin-left:clamp(18px,3vw,44px)}}
 @media (max-width:900px){.visit-section .visit-copy{margin-left:18px}}
+
+@media (min-width:901px){.visit-section .visit-details{margin-left:clamp(18px,3vw,44px)}}
+@media (max-width:900px){.visit-section .visit-details{margin-left:18px}}

@@ -39,3 +39,4 @@
 - [x] Match the “Come by” section to the “Wilton special” alignment rhythm: aligned section marker, left editorial copy and CTA, centered right details column, and responsive mobile stacking.
 - [x] Add a small responsive desktop margin to nudge the Come by copy slightly right while keeping mobile flush.
 - [x] Apply the same subtle rightward spacing to the Come by copy on mobile, using an 18px margin while preserving readable responsive layout.
+- [x] Apply matching rightward spacing to the Wilton Fort address, opening hours, and Say hello detail blocks on desktop and mobile.
