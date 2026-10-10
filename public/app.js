@@ -1,19 +1,21 @@
 const ASSETS = {
-  hero: '/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-1.webp',
-  story: '/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-2.webp',
-  special: '/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-3.webp',
-  interior: '/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-4.webp',
-  breakfast: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-1.webp',
-  fire: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-2.webp',
-  vegetarian: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-3.webp',
-  dessert: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-4.webp',
-  event: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-5.webp',
-  chef: '/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-2.webp',
-  cocktail: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-5.webp',
-  exterior: '/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-4.webp',
-  table: '/manus-storage/async-images/5tleMu0a7OVnWWmJ1N3Xsh/image-3.webp',
-  spices: '/manus-storage/async-images/gSItUlEc9j8IaB0Pddh8rE/image-3.webp'
+  hero: 'assets/5tleMu0a7OVnWWmJ1N3Xsh-image-1.webp',
+  story: 'assets/5tleMu0a7OVnWWmJ1N3Xsh-image-2.webp',
+  special: 'assets/5tleMu0a7OVnWWmJ1N3Xsh-image-3.webp',
+  interior: 'assets/5tleMu0a7OVnWWmJ1N3Xsh-image-4.webp',
+  breakfast: 'assets/gSItUlEc9j8IaB0Pddh8rE-image-1.webp',
+  fire: 'assets/gSItUlEc9j8IaB0Pddh8rE-image-2.webp',
+  vegetarian: 'assets/gSItUlEc9j8IaB0Pddh8rE-image-3.webp',
+  dessert: 'assets/gSItUlEc9j8IaB0Pddh8rE-image-4.webp',
+  event: 'assets/gSItUlEc9j8IaB0Pddh8rE-image-5.webp',
+  chef: 'assets/5tleMu0a7OVnWWmJ1N3Xsh-image-2.webp',
+  cocktail: 'assets/gSItUlEc9j8IaB0Pddh8rE-image-5.webp',
+  exterior: 'assets/5tleMu0a7OVnWWmJ1N3Xsh-image-4.webp',
+  table: 'assets/5tleMu0a7OVnWWmJ1N3Xsh-image-3.webp',
+  spices: 'assets/gSItUlEc9j8IaB0Pddh8rE-image-3.webp'
 };
+const assetBase = new URL('assets/', document.querySelector('script[src$="app.js"]')?.src || document.baseURI);
+Object.keys(ASSETS).forEach((key) => { ASSETS[key] = new URL(ASSETS[key], assetBase).href; });
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('.menu-toggle');
